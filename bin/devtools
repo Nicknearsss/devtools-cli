@@ -2,22 +2,10 @@
 # ==================================
 # DevTools CLI Dispatcher
 # ==================================
-# Info:
-#   Entry-point for @kingzyphor/devtools-cli.
-#   Provides 'devtools' and 'dt' commands (both reference this file).
-# Author:
-#   KingZyphor — sole owner of this CLI and its derivatives unless otherwise stated.
-# License:
-#   MIT (see LICENSE)
-# ==================================
 
 set -euo pipefail
 IFS=$'\n\t'
 
-# ==================================
-# ASCII Banner (for professional CLI header)
-# ==================================
-# Prints a small banner when run without args (kept compact).
 DEVTOOLS_BANNER='
   ____   _____ __     __ _______              _     
  |  _ \ | ____|\ \   / /|__   __| ___   ___  | | ___ 
@@ -28,9 +16,7 @@ DEVTOOLS_BANNER='
                      D E V T O O L S   C L I
 '
 
-# ==================================
-# Resolve base directory (works when installed via npm or used locally)
-# ==================================
+# Resolve base directory
 SOURCE="${BASH_SOURCE[0]}"
 while [ -h "$SOURCE" ]; do
   DIR="$(cd -P "$(dirname "$SOURCE")" >/dev/null 2>&1 && pwd)"
@@ -38,11 +24,9 @@ while [ -h "$SOURCE" ]; do
   [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
 done
 BASEDIR="$(cd -P "$(dirname "$SOURCE")/.." >/dev/null 2>&1 && pwd)"
-COMMANDS_DIR="$BASEDIR/Terminal Commands"
+COMMANDS_DIR="$BASEDIR/Terminal-Commands"
 
-# ==================================
 # Help text
-# ==================================
 show_help() {
 cat <<'EOF'
 DevTools CLI (@kingzyphor/devtools-cli)
@@ -53,22 +37,25 @@ Usage:
 
 Commands:
   git-autopush [options] [paths...]     Automated git add/commit/push helper
-  debug-suite <subcmd> [args...]       Debugging utilities (logs|port|deps|ps|env)
-  sys-info                              System & environment diagnostics
+  smart-git-clone <repo-url>            Clone repo, auto-install deps, run dev server, fetch GitHub info
+  code-check [path]                     Run code quality and warning/error checks
+  env-creator                            Create a .env file interactively
+  debug-suite <subcmd> [args...]        Debugging utilities (logs|port|deps|ps|env)
+  sys-info                               System & environment diagnostics
   repo-cleaner [--apply|--dry-run]      Organize/clean repo files
   branch-sync <branch> [options]        Sync local branch with remote
   error-trace <pid|run> [args...]       Gather traces for PID or run command under trace
-  install                               Run packaged installer (install.sh)
-  help                                  Show this help
+  install                                Run packaged installer (install.sh)
+  help                                   Show this help
 
 Examples:
-  devtools git-autopush -b main -m "chore: update"
-  devtools debug-suite deps
-  dt repo-cleaner --dry-run
+  devtools smart-git-clone https://github.com/user/repo.git
+  devtools code-check src/
+  dt env-creator
 EOF
 }
 
-# If no args, print banner + help
+# Main dispatch
 if [ $# -eq 0 ]; then
   printf '%s\n' "$DEVTOOLS_BANNER"
   show_help
@@ -79,6 +66,9 @@ cmd="$1"; shift
 
 case "$cmd" in
   git-autopush) exec "$COMMANDS_DIR/git-autopush.sh" "$@" ;;
+  smart-git-clone) exec "$COMMANDS_DIR/smart-git-clone.sh" "$@" ;;
+  code-check) exec "$COMMANDS_DIR/code-check.sh" "$@" ;;
+  env-creator) exec "$COMMANDS_DIR/env-creator.sh" "$@" ;;
   debug-suite) exec "$COMMANDS_DIR/debug-suite.sh" "$@" ;;
   sys-info) exec "$COMMANDS_DIR/sys-info.sh" "$@" ;;
   repo-cleaner) exec "$COMMANDS_DIR/repo-cleaner.sh" "$@" ;;
